@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Pop';
+	src: url('../../../../../public/fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Robo';
+	src: url('../../../../../public/fonts/Roboto-Light.ttf');
+}
+
+@mixin pop {
+	font-family: 'Pop';
+	font-size: 20px;
+}
+
+@mixin roboto {
+	font-family: 'Robo';
+	font-size: 20px;
+}
+
+
+.collectionContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 350px);
+	grid-template-rows: repeat(2, auto);
+	gap: 40px;
+	row-gap: 0px;
+	grid-row: 2/3;
+	grid-column: 2/3;
+
+	.collectionItem {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		padding: 20px;
+		width: 350px;
+		max-height: 450px;
+
+		.titleItem {
+			@include pop;
+			font-size: 25px;
+		}
+
+		.descriptionItem {
+			@include roboto();
+			font-size: 19px;
+			padding-left: 20px
+		}
+
+		.btnItem {
+			button {
+				@include roboto();
+				font-size: 18px;
+				padding: 10px 20px;
+				border-radius: 20px;
+				border: 1px solid white;
+				background-color: rgba(0, 0, 0, 0);
+
+			}
+		}
+	}
+}

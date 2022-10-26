@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Pop';
+	src: url('../../../../public/fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Robo';
+	src: url('../../../../public/fonts/Roboto-Light.ttf');
+}
+
+@mixin pop {
+	font-family: 'Pop';
+	font-size: 20px;
+}
+
+@mixin roboto {
+	font-family: 'Robo';
+	font-size: 20px;
+}
+
+.section4Container {
+	display: grid;
+	grid-template-columns: 200px 1fr 250px;
+	grid-template-rows: 100px 1fr 100px;
+	column-gap: 20px;
+
+}

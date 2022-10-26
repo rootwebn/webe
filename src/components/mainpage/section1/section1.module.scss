@@ -1,0 +1,72 @@
+
+@font-face {
+	font-family: 'Pop';
+	src: url('../../../../public/fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Robo';
+	src: url('../../../../public/fonts/Roboto-Light.ttf');
+}
+
+@mixin pop {
+	font-family: 'Pop';
+	font-size: 20px;
+}
+
+@mixin roboto {
+	font-family: 'Robo';
+	font-size: 20px;
+}
+
+.section1Container {
+	display: grid;
+	grid-template-columns: 150px 3fr 4fr 100px;
+	grid-template-rows: 100px 50px 3fr 2fr;
+	column-gap: 40px;
+
+	.containerDescription {
+		grid-column: 2/3;
+		grid-row: 3/4;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-around;
+
+		.containerBtn {
+			button{
+				@include pop;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				min-width: 210px;
+				border-radius: 40px;
+				padding: 13px 30px;
+				color: white;
+				background-color: rgba(53, 50, 215, 1);
+				box-shadow: 0px 4px 15px 0px rgba(53, 50, 215, 0.8);
+				border: none
+			}
+		}
+
+		.containerTitle {
+			.title {
+				display: flex;
+				justify-content: center;
+				font-family: 'Pop';
+				font-size: 60px;
+			}
+
+			.description {
+				@include roboto();
+				font-size: 23px;
+				padding-left: 5px;
+			}
+
+		}
+	}
+	.containerImg{
+		grid-column: 3/4;
+		grid-row: 2/5;
+	}
+}
