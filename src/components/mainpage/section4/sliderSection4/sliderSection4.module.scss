@@ -71,10 +71,13 @@
 				min-height: 350px;
 				list-style: none;
 
-				ul {
+				a {
 					@include pop();
 					list-style: none;
 					text-decoration: none;
+				}
+				a:hover{
+					text-decoration: underline;
 				}
 			}
 		}
@@ -99,20 +102,13 @@
 			opacity: 1;
 			pointer-events: visible;
 		}
-
-		.sliderDots{
-			@include sliderDot();
-			position: absolute;
-			top: 4050px;
-			right: 1000px;
-			transform: translate(-50%, 0);
-		}
-		.sliderDot {
-			@include sliderDot();
-		}
-		.sliderDotActive{
-			@include sliderDot();
-			background-color: steelblue;
+		.sliderArrowLeft, .sliderArrowRight{
+			padding-top: 3px;
+			padding-left: 12px;
+			border-radius: 50%;
+			height: 30px;
+			width: 30px;
+			background-color: grey;
 		}
 	}
 }

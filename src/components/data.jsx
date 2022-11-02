@@ -4,7 +4,7 @@ export const CollectionItems = [
 		imgPath: '/img/svg/img2.svg',
 		title: 'Website Ui',
 		bntTitle: 'Read More',
-		styleBtn: 'rgba(43, 38, 183, 0.8), rgba(0, 0, 0, 0.8)',
+		styleBtn: '',
 		descript: 'Fast, Powerful & Most Secure Network Solution for Smart Home & Business'
 	},
 	{
@@ -49,98 +49,154 @@ export const CollectionItems = [
 	},
 ];
 
-export const SliderSection4Data = [
+export const SliderSection4MinimalDesigns = [
 	{
-		sliderId: 0,
 		id: 0,
-		imgPath: '/img/img4.png',
+		imgPath: '/img/img21.png',
 	},
 	{
-		sliderId: 0,
 		id: 1,
-		imgPath: '/img/img4.png',
+		imgPath: '/img/img21.png',
 	},
 	{
-		sliderId: 0,
 		id: 2,
-		imgPath: '/img/img4.png',
+		imgPath: '/img/img21.png',
 	},
 	{
-		sliderId: 0,
 		id: 3,
-		imgPath: '/img/img4.png',
+		imgPath: '/img/img21.png',
 	},
 	{
-		sliderId: 0,
 		id: 4,
-		imgPath: '/img/img4.png',
+		imgPath: '/img/img21.png',
 	},
 	{
-		idd:0,
-		sliderId: 0,
 		id: 5,
+		imgPath: '/img/img21.png',
+	},
+];
+
+export const SliderSection4ColorfulDesigns = [
+	{
+		id: 0,
+		imgPath: '/img/img22.png',
+	},
+	{
+		id: 1,
+		imgPath: '/img/img22.png',
+	},
+	{
+		id: 2,
+		imgPath: '/img/img22.png',
+	},
+	{
+		id: 3,
+		imgPath: '/img/img22.png',
+	},
+	{
+		id: 4,
+		imgPath: '/img/img22.png',
+	},
+	{
+		id: 5,
+		imgPath: '/img/img22.png',
+	},
+];
+
+export const SliderSection4LandingPageDesigns1 = [
+	{
+		id: 0,
+		imgPath: '/img/img6.png',
+	},
+	{
+		id: 1,
+		imgPath: '/img/img6.png',
+	},
+	{
+		id: 2,
+		imgPath: '/img/img6.png',
+	},
+	{
+		id: 3,
+		imgPath: '/img/img6.png',
+	},
+	{
+		id: 4,
+		imgPath: '/img/img6.png',
+	},
+	{
+		id: 5,
+		imgPath: '/img/img6.png',
+	},
+];
+export const SliderSection4LandingPageDesigns2 = [
+	{
+		id: 6,
 		imgPath: '/img/img4.png',
 	},
 	{
-		sliderId: 1,
-		id: 6,
-		imgPath: '/img/img5.png',
-	},
-	{
-		sliderId: 1,
 		id: 7,
-		imgPath: '/img/img5.png',
+		imgPath: '/img/img4.png',
 	},
 	{
-		sliderId: 1,
 		id: 8,
-		imgPath: '/img/img5.png',
+		imgPath: '/img/img4.png',
 	},
 	{
-		sliderId: 1,
 		id: 9,
-		imgPath: '/img/img5.png',
+		imgPath: '/img/img4.png',
 	},
 	{
-		sliderId: 1,
 		id: 10,
-		imgPath: '/img/img5.png',
+		imgPath: '/img/img4.png',
 	},
 	{
-		idd:1,
-		sliderId: 1,
 		id: 11,
-		imgPath: '/img/img5.png',
+		imgPath: '/img/img4.png',
 	},
+]
+export const SliderSection4LandingPageDesigns = [
+	...SliderSection4LandingPageDesigns1,
+	...SliderSection4LandingPageDesigns2
+]
+
+export const SliderSection4MobileDesigns = [
 	{
-		sliderId: 2,
-		id: 12,
-		imgPath: '/img/img6.png',
-	},
-	{
-		sliderId: 2,
-		id: 13,
-		imgPath: '/img/img6.png',
-	},
-	{
-		sliderId: 2,
-		id: 14,
-		imgPath: '/img/img6.png',
-	},
-	{
-		sliderId: 2,
-		id: 15,
-		imgPath: '/img/img6.png',
-	},
-	{
-		sliderId: 2,
-		id: 16,
-		imgPath: '/img/img6.png',
-	},
-	{
-		idd:2,
-		sliderId: 2,
-		id: 17,
-		imgPath: '/img/img6.png',
-	},
+	id: 0,
+	imgPath: '/img/img23.png',
+},
+{
+	id: 1,
+	imgPath: '/img/img23.png',
+},
+{
+	id: 2,
+	imgPath: '/img/img23.png',
+},
+{
+	id: 3,
+	imgPath: '/img/img23.png',
+},
+{
+	id: 4,
+	imgPath: '/img/img23.png',
+},
+{
+	id: 5,
+	imgPath: '/img/img23.png',
+},
+];
+
+export const SliderSection4AllDesigns = [
+	...SliderSection4ColorfulDesigns,
+	...SliderSection4LandingPageDesigns,
+	...SliderSection4MinimalDesigns,
+	...SliderSection4MobileDesigns
+];
+
+export const DesignsArray = [
+	SliderSection4MinimalDesigns,
+	SliderSection4ColorfulDesigns,
+	SliderSection4LandingPageDesigns,
+	SliderSection4MobileDesigns
 ];

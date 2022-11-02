@@ -1,11 +1,27 @@
 import React, { forwardRef, useState } from 'react'
 import s from './sliderSection4.module.scss'
+import { DesignsArray } from '../../../data';
 
-const SliderSection4 = forwardRef(({ data }, ref) => {
-	const [current, currentSet] = useState(0);
+const SliderSection4 = forwardRef(({ value }, ref) => {
+	const [valueMenu, setMenuValue] = useState(0);
+	const [current, setCurrent] = useState(6);
 	const slideLeft = () => {
-		currentSet(current === 3 - 1 ? 0 : current + 1)
+		setCurrent(current <= 5 ? 0 : 6 ) 
 	};
+	const slideRight = () => {
+		setCurrent(current >= 5 ? 6 : 0 ) 
+	};
+
+	const UlOnClicked = ({ value, children }) => {
+		return (
+			<a
+				onClick={() => { setMenuValue(value) }}
+				className={value === valueMenu ? s.sliderImgsActive : s.sliderImgs}
+			>
+				{children}
+			</a>
+		)
+	}
 
 	return (
 		<div className={s.section4Content}>
@@ -20,36 +36,30 @@ const SliderSection4 = forwardRef(({ data }, ref) => {
 				</div>
 				<div className={s.menuContainer}>
 					<li className={s.listMenu}>
-						<ul>All designs</ul>
-						<ul>Minimalistic designs</ul>
-						<ul>Colorful designs</ul>
-						<ul>Landing Page designs</ul>
-						<ul>Mobile App Designs</ul>
+						<UlOnClicked value={0}>Minimalistic designs</UlOnClicked>
+						<UlOnClicked value={1}>Colorful designs</UlOnClicked>
+						<UlOnClicked value={2}>Landing Page designs</UlOnClicked>
+						<UlOnClicked value={3}>Mobile App Designs</UlOnClicked>
 					</li>
 				</div>
 			</div>
 			<div className={s.sliderWrapper}>
-				{data.map((item) => {
-					return (
-						<div
-							key={item.id}
-							className={item.sliderId === current ? s.sliderImgsActive : s.sliderImgs}
-						>
-							<img src={item.imgPath} alt="" height={400} width={330} />
-						</div>
-					)
-				})}
-				<div className={s.sliderDots}>
-					{data.map((item) => {
+				{
+					DesignsArray[valueMenu].map((item) => {
 						return (
-							<div
-								key={item.idd}
-								className={item.idd === current ? s.sliderDotActive : s.sliderDot}
-								onClick={slideLeft}>
-							</div>
+							<img
+								key={item.id}
+								src={item.imgPath}
+								className={item.id >= current ? s.sliderImgsActive : s.sliderImgs}
+								alt=""
+								height={400}
+								width={350} 
+							/>
 						)
-					})}
-				</div>
+					})
+				}
+				<div className={s.sliderArrowLeft} onClick={slideLeft}>&lsaquo;</div>
+				<div className={s.sliderArrowRight} onClick={slideRight}>&rsaquo;</div>
 			</div>
 		</div>
 	)
