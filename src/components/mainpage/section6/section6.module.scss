@@ -1,0 +1,106 @@
+@use 'src/components/settings';
+
+@mixin sliderItem {
+	@include settings.pop;
+	font-size: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 300px;
+}
+
+.section6Container{
+	background:linear-gradient(45deg,rgba(9, 14, 100, 0.95), rgba(9, 14, 156, 0.95));
+	display: grid;
+	grid-template-rows: 110px 120px 1fr 200px 50px;
+	grid-template-columns: 200px 1fr 200px;
+	.titleContainer{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		grid-row: 2/3;
+		grid-column: 2/3;
+		.title{
+			@include settings.pop;
+			font-size: 30px;
+			color: whitesmoke;
+		}
+		.subTitle{
+			@include settings.roboto;
+			font-size: 18px;
+			letter-spacing: 0.06em;
+			color: grey;
+		}
+	}
+	.container{
+		grid-column: 1/4;
+		grid-row: 3/4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.sliderItemActive{
+			@include sliderItem();
+		}
+		.sliderItemDisable{
+			.descItem{
+				opacity: 0;
+			}
+			.imgContainer{
+				opacity: 0.3;
+			}
+			@include sliderItem();
+		}
+	}
+	.imgContainer{
+		img{
+			border-radius: 50%;
+		}
+	}	
+	.descContainer{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		grid-row: 4/5;
+		grid-column: 2/3;
+		.blockDesc{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			min-height: 200px;
+			.overDesc{
+				@include settings.roboto;
+				font-size: 15px;
+				color: grey;
+			}
+			.desc{
+				max-width: 600px;
+				@include settings.pop;
+				font-size: 40px;
+				color:white;
+			}
+		}
+		.blockBtn{
+			display: flex;
+			align-items: flex-end;
+			min-height: 120px;
+			button{
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				justify-content: space-around;
+				padding-right: 25px;
+				border: 2px solid rgba(35, 38, 218, 0.8);
+				border-radius: 30px;
+				min-height: 60px;
+				min-width: 200px;
+				background-color: rgba(35, 38, 218, 0.8);
+				color: white;
+				@include settings.pop;
+			}
+		}
+	}
+}

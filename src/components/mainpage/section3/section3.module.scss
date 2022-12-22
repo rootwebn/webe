@@ -1,27 +1,11 @@
-@font-face {
-	font-family: 'Pop';
-	src: url('../../../../public/fonts/Poppins-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: 'Robo';
-	src: url('../../../../public/fonts/Roboto-Light.ttf');
-}
-
-@mixin pop {
-	font-family: 'Pop';
-	font-size: 20px;
-}
-
-@mixin roboto {
-	font-family: 'Robo';
-	font-size: 20px;
-}
+@use 'src/components/settings';
 
 .section3Container {
 	display: grid;
-	grid-template-rows: 100px 1fr 100px;
+	grid-template-rows: 10px 1fr 10px;
 	grid-template-columns: 100px 1fr 1fr 100px;
+	max-width: 1903px;
+
 
 	.imgContainer {
 		grid-column: 2/3;
@@ -42,12 +26,12 @@
 			padding-bottom: 10px;
 			min-height: 80px;
 			.title {
-				@include pop();
+				@include settings.pop();
 				font-size: 25px;
 			}
 
 			.description {
-				@include roboto();
+				@include settings.roboto();
 			}
 		}
 
@@ -63,7 +47,7 @@
 				background-color: rgba(88, 110, 249, 0.8);
 			}
 			.text{
-				@include roboto();
+				@include settings.roboto();
 				display: flex;
 				align-items: center;
 			}

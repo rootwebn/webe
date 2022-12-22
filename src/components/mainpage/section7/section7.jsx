@@ -3,7 +3,9 @@ import s from './section7.module.scss'
 
 function Section7() {
 	return (
-		<div></div>
+		<div className={s.exampleSite}>
+			
+		</div>
 	)
 }
 

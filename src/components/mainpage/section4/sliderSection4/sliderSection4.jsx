@@ -1,68 +1,48 @@
-import React, { forwardRef, useState } from 'react'
+import React from 'react'
 import s from './sliderSection4.module.scss'
 import { DesignsArray } from '../../../data';
+import { SliderSection4ColorfulDesigns } from '../../../data';
+import { useState } from 'react';
 
-const SliderSection4 = forwardRef(({ value }, ref) => {
-	const [valueMenu, setMenuValue] = useState(0);
-	const [current, setCurrent] = useState(6);
-	const slideLeft = () => {
-		setCurrent(current <= 5 ? 0 : 6 ) 
-	};
-	const slideRight = () => {
-		setCurrent(current >= 5 ? 6 : 0 ) 
-	};
+const SliderSection4 = ({ index }) => {
+	const maxImgOnPage = 6;
+	const [currentPage, setCurrentPage] = useState(1);
+	const array = [];
 
-	const UlOnClicked = ({ value, children }) => {
-		return (
-			<a
-				onClick={() => { setMenuValue(value) }}
-				className={value === valueMenu ? s.sliderImgsActive : s.sliderImgs}
-			>
-				{children}
-			</a>
-		)
+	for (let i = 0; array.length < maxImgOnPage; i++) {
+		const num = currentPage === 1 ? i : ((currentPage - 1) * maxImgOnPage) + i
+		if (num === DesignsArray[index].length) break
+		array.push(DesignsArray[index][num])
 	}
 
+	console.log(index)
+	console.log(Union)
 	return (
-		<div className={s.section4Content}>
-			<div className={s.titleMenuContainer}>
-				<div className={s.titleContainer}>
-					<div className={s.title}>
-						Our Portfolio
+		<div className={s.sliderWrapper}>
+			{Union.map((item) => {
+				return (
+					<div className={s.imageActive} key={item.id}>
+						<img src={item.imgPath} alt="" width={350} height={400} />
 					</div>
-					<div className={s.description}>
-						View Our Portfolio in catagoryes
-					</div>
-				</div>
-				<div className={s.menuContainer}>
-					<li className={s.listMenu}>
-						<UlOnClicked value={0}>Minimalistic designs</UlOnClicked>
-						<UlOnClicked value={1}>Colorful designs</UlOnClicked>
-						<UlOnClicked value={2}>Landing Page designs</UlOnClicked>
-						<UlOnClicked value={3}>Mobile App Designs</UlOnClicked>
-					</li>
-				</div>
-			</div>
-			<div className={s.sliderWrapper}>
-				{
-					DesignsArray[valueMenu].map((item) => {
-						return (
-							<img
-								key={item.id}
-								src={item.imgPath}
-								className={item.id >= current ? s.sliderImgsActive : s.sliderImgs}
-								alt=""
-								height={400}
-								width={350} 
-							/>
-						)
-					})
-				}
-				<div className={s.sliderArrowLeft} onClick={slideLeft}>&lsaquo;</div>
-				<div className={s.sliderArrowRight} onClick={slideRight}>&rsaquo;</div>
+				)
+			})}
+			<div className={s.btnMenu}>
+				<button
+					onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+					disabled={currentPage <= 1}
+				>
+				Left
+				</button>
+				<button
+				onClick={() => currentPage < 3 && setCurrentPage(currentPage+1)}
+				disabled={currentPage >= 3}
+				>
+				Right
+				</button>
 			</div>
 		</div>
 	)
-})
+
+}
 
 export default SliderSection4

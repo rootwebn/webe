@@ -10,7 +10,8 @@ function Collection() {
 					<div 
 					className={s.collectionItem} 
 					key={item.id} 
-					style={{backgroundColor: `linear-gradient(rgba(43, 38, 183, 0.8)`}}>
+					style={{background:item.styleBtn}}
+					>
 						<div className={s.imgItem}>
 							<img src={item.imgPath} alt="" height={128} width={128} />
 						</div>

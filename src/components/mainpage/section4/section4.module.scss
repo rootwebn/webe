@@ -1,27 +1,64 @@
-@font-face {
-	font-family: 'Pop';
-	src: url('../../../../public/fonts/Poppins-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: 'Robo';
-	src: url('../../../../public/fonts/Roboto-Light.ttf');
-}
-
-@mixin pop {
-	font-family: 'Pop';
-	font-size: 20px;
-}
-
-@mixin roboto {
-	font-family: 'Robo';
-	font-size: 20px;
-}
+@use 'src/components/settings';
 
 .section4Container {
 	display: grid;
-	grid-template-columns: 200px 1fr 250px;
+	grid-template-columns: 150px 1fr 150px;
 	grid-template-rows: 100px 1fr 100px;
 	column-gap: 20px;
-
+	max-width: 1903px;
+	background-color: rgba(245, 245, 245, 0.8);
+	.containerSlider{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		grid-column: 2/3;
+		grid-row: 2/3;
+		.menuSlider{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			max-height: 600px;
+			.titleMenu{
+				.title{
+					@include settings.pop();
+					font-size: 30px;
+				}
+				.desc{
+					@include settings.roboto();
+				}
+			}
+			.menu{
+				ul{
+					min-height: 300px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					@include settings.pop();
+					a{
+						cursor: pointer;
+						color: black;
+					}
+					a:hover{
+						text-decoration: underline;
+						color: black;
+					}
+				}
+			}
+		}
+		.slider{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			min-height: 700px;
+			min-width: 800px;
+			.btnMenu{
+				display: flex;
+				justify-content: space-around;
+				button{
+					height: 30px;
+					width: 100px;
+				}
+			}
+		}
+	}
 }

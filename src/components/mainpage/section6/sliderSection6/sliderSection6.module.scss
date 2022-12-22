@@ -1,0 +1,42 @@
+@mixin sliderItem {
+	
+}
+
+.container{
+	grid-column: 2/3;
+	grid-row: 3/4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.sliderItemActive{
+
+	}
+	.sliderItemDisable{
+
+	}
+}
+.imgContainer,
+.imgContainer::after,
+.imgContainer::before{
+	width: 100px;
+	height: 5px;
+	background-color: black;
+	border-radius: 100px;
+	box-shadow: 0 0 0 30px black;
+}
+.imgContainer{
+	position: relative;
+}
+.imgContainer::after,
+.imgContainer::before{
+	content: '';
+	position: absolute;
+}
+.imgContainer::after{
+	left: 0;
+	transform: rotate(-60deg);
+}
+.imgContainer::before{
+	right: 0;
+	transform: rotate(60deg);
+}

@@ -1,0 +1,70 @@
+@use 'src/components/settings';
+
+.section5Container {
+	display: grid;
+	grid-template-columns: 200px 1fr 200px;
+	grid-template-rows: 40px 1fr 4fr 100px;
+	max-width: 1903px;
+
+
+	.titleContainer {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.title {
+			@include settings.pop;
+			font-size: 30px;
+		}
+
+		.desc {
+			@include settings.roboto;
+			font-size: 25px;
+		}
+	}
+
+	.itemsContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		grid-column: 2/3;
+		grid-row: 3/4;
+
+		.squareItem {
+			border-radius: 5px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			min-height: 270px;
+			min-width: 270px;
+
+			.numContainer {
+				border-radius: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 200px;
+				min-width: 200px;
+				max-height: 200px;
+				max-width: 200px;
+				color: white;
+
+				.numItem {
+					@include settings.pop;
+					font-size: 50px;
+				}
+			}
+			.titleItem {
+				display: flex;
+				justify-content: center;
+				@include settings.pop;
+				font-size: 15px;
+			}
+		}
+	}
+}

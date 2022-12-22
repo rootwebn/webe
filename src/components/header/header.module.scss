@@ -1,28 +1,4 @@
-
-@font-face {
-	font-family: 'Pop';
-	src: url('../../../public/fonts/Poppins-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: 'Robo';
-	src: url('../../../public/fonts/Roboto-Light.ttf');
-}
-
-@font-face {
-	font-family: 'Exo';
-	src: url('../../../public/fonts/Exo-Light.ttf');
-}
-
-@mixin pop {
-	font-family: 'Pop';
-	font-size: 20px;
-}
-
-@mixin roboto {
-	font-family: 'Robo';
-	font-size: 20px;
-}
+@use 'src/components/settings';
 
 .headerContainer {
 	display: flex;
@@ -30,7 +6,6 @@
 	grid-row: 1/2;
 
 	.headerContent {
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -44,14 +19,14 @@
 			min-width: 140px;
 
 			.headerTitle {
-				font-family: "Pop";
+				@include settings.pop;
 				font-size: 25px;
 				display: flex;
 				align-items: center;
 			}
 
 			.headerTitle2 {
-				font-family: "Exo";
+				@include settings.roboto;
 				font-size: 20px;
 				display: flex;
 				align-items: center;
@@ -79,7 +54,7 @@
 
 					li {
 						a {
-							@include pop();
+							@include settings.pop;
 							text-decoration: none;
 							color: black;
 						}

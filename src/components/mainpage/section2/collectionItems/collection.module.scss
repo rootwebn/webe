@@ -1,30 +1,20 @@
-@font-face {
-	font-family: 'Pop';
-	src: url('../../../../../public/fonts/Poppins-SemiBold.ttf');
+@use 'src/components/settings';
+
+@mixin btnItem{
+	@include settings.roboto();
+	font-size: 18px;
+	padding: 10px 20px;
+	border-radius: 20px;
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
 }
-
-@font-face {
-	font-family: 'Robo';
-	src: url('../../../../../public/fonts/Roboto-Light.ttf');
-}
-
-@mixin pop {
-	font-family: 'Pop';
-	font-size: 20px;
-}
-
-@mixin roboto {
-	font-family: 'Robo';
-	font-size: 20px;
-}
-
-
 .collectionContainer {
 	display: grid;
-	grid-template-columns: repeat(3, 350px);
-	grid-template-rows: repeat(2, auto);
-	gap: 40px;
-	row-gap: 0px;
+	grid-template-columns: repeat(3, 320px);
+	grid-template-rows: repeat(2, 420px);
+	gap: 20px;
+	column-gap: 40px;
 	grid-row: 2/3;
 	grid-column: 2/3;
 
@@ -34,29 +24,31 @@
 		justify-content: space-around;
 		align-items: center;
 		padding: 20px;
-		width: 350px;
-		max-height: 450px;
+		width: 320px;
+		max-height: 420px;
 
 		.titleItem {
-			@include pop;
+			color: white;
+			@include settings.pop;
 			font-size: 25px;
 		}
 
 		.descriptionItem {
-			@include roboto();
+			color: white;
+			@include settings.roboto();
 			font-size: 19px;
 			padding-left: 20px
 		}
 
 		.btnItem {
 			button {
-				@include roboto();
-				font-size: 18px;
-				padding: 10px 20px;
-				border-radius: 20px;
+				@include btnItem();
+			}
+			button:hover {
+				@include btnItem();
 				border: 1px solid white;
-				background-color: rgba(0, 0, 0, 0);
-
+				background-color: rgba(255, 255, 255, 1);
+				color: black;
 			}
 		}
 	}

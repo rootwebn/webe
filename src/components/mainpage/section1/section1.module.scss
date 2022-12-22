@@ -1,29 +1,11 @@
-
-@font-face {
-	font-family: 'Pop';
-	src: url('../../../../public/fonts/Poppins-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: 'Robo';
-	src: url('../../../../public/fonts/Roboto-Light.ttf');
-}
-
-@mixin pop {
-	font-family: 'Pop';
-	font-size: 20px;
-}
-
-@mixin roboto {
-	font-family: 'Robo';
-	font-size: 20px;
-}
+@use 'src/components/settings';
 
 .section1Container {
 	display: grid;
 	grid-template-columns: 150px 3fr 4fr 100px;
 	grid-template-rows: 100px 50px 3fr 2fr;
 	column-gap: 40px;
+	max-width: 1903px;
 
 	.containerDescription {
 		grid-column: 2/3;
@@ -35,7 +17,7 @@
 
 		.containerBtn {
 			button{
-				@include pop;
+				@include settings.pop;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -58,7 +40,7 @@
 			}
 
 			.description {
-				@include roboto();
+				@include settings.roboto;
 				font-size: 23px;
 				padding-left: 5px;
 			}
