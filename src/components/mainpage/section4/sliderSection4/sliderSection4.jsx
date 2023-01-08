@@ -1,7 +1,6 @@
 import React from 'react'
 import s from './sliderSection4.module.scss'
 import { DesignsArray } from '../../../data';
-import { SliderSection4ColorfulDesigns } from '../../../data';
 import { useState } from 'react';
 
 const SliderSection4 = ({ index }) => {
@@ -16,10 +15,10 @@ const SliderSection4 = ({ index }) => {
 	}
 
 	console.log(index)
-	console.log(Union)
+	console.log(array)
 	return (
 		<div className={s.sliderWrapper}>
-			{Union.map((item) => {
+			{array.map((item) => {
 				return (
 					<div className={s.imageActive} key={item.id}>
 						<img src={item.imgPath} alt="" width={350} height={400} />

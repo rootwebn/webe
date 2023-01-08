@@ -3,9 +3,6 @@
 	display: grid;
 	grid-template-columns: repeat(3, 350px);
 	grid-template-rows: 400px 400px 30px;
-	.imageActive{
-
-	}
 	.btnMenu{
 		grid-row: 3/4;
 		grid-column: 1/4;

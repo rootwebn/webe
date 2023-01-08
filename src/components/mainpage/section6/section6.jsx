@@ -1,11 +1,8 @@
 import React from 'react'
 import s from './section6.module.scss'
-import { useState } from 'react';
-import { sliderData } from '../../data'
+import SliderSection6 from './sliderSection6/sliderSection6';
 
 function Section6() {
-	const [currentItem, setCurrentItem] = useState(2);
-
 	return (
 		<div className={s.section6Container}>
 			<div className={s.titleContainer}>
@@ -16,29 +13,7 @@ function Section6() {
 					Customer Review Sites For Collecting Business & Product Review
 				</div>
 			</div>
-			<div className={s.container}>
-				{sliderData.map((item) => {
-					return (
-						<div 
-						className={item.id === currentItem ? s.sliderItemActive : s.sliderItemDisable} 
-						style={{transform:item.styleItem}}
-						key={item.id}
-						>
-							<div className={s.imgContainer}>
-								<img src={item.imgPath} alt="" height={150} width={150} />
-							</div>
-							<div className={s.descItem}>
-								<div className={s.titleItem}>
-									{item.titleImg}
-								</div>
-								<div className={s.descItem}>
-									{item.descImg}
-								</div>
-							</div>
-						</div>
-					)
-				})}
-			</div>
+			<SliderSection6 />
 			<div className={s.descContainer}>
 				<div className={s.blockDesc}>
 					<div className={s.overDesc}>

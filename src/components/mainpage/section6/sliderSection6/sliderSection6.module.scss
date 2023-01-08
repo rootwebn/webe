@@ -1,42 +1,65 @@
+@use 'src/components/settings';
+
 @mixin sliderItem {
-	
+	@include settings.pop;
+	font-size: 17px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 300px;
+	min-width: 300px;
 }
 
-.container{
-	grid-column: 2/3;
+.slider {
+	grid-column: 1/4;
 	grid-row: 3/4;
 	display: flex;
-	align-items: center;
+	flex-direction: row;
 	justify-content: center;
-	.sliderItemActive{
+	align-items: center;
 
+	.btnRight{
+		max-height: 50px;
+		min-width: 80px;
+		margin-right: 10px;
 	}
-	.sliderItemDisable{
+	.btnLeft{
+		max-height: 50px;
+		min-width: 80px;
+		margin-left: 10px;
+	}
+	.containerItems {
+		height: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
 
+		.sliderItemActive {
+			@include sliderItem();
+
+			.descItem {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.titleItem {
+					color: white;
+				}
+			}
+		}
+
+		.sliderItemDisable {
+			.descItem {
+				opacity: 0;
+			}
+
+			.imgContainer {
+				opacity: 0.3;
+			}
+
+			@include sliderItem();
+		}
 	}
-}
-.imgContainer,
-.imgContainer::after,
-.imgContainer::before{
-	width: 100px;
-	height: 5px;
-	background-color: black;
-	border-radius: 100px;
-	box-shadow: 0 0 0 30px black;
-}
-.imgContainer{
-	position: relative;
-}
-.imgContainer::after,
-.imgContainer::before{
-	content: '';
-	position: absolute;
-}
-.imgContainer::after{
-	left: 0;
-	transform: rotate(-60deg);
-}
-.imgContainer::before{
-	right: 0;
-	transform: rotate(60deg);
 }

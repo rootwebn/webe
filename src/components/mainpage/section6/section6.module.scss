@@ -1,15 +1,5 @@
 @use 'src/components/settings';
 
-@mixin sliderItem {
-	@include settings.pop;
-	font-size: 15px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	min-height: 300px;
-}
-
 .section6Container{
 	background:linear-gradient(45deg,rgba(9, 14, 100, 0.95), rgba(9, 14, 156, 0.95));
 	display: grid;
@@ -34,31 +24,6 @@
 			color: grey;
 		}
 	}
-	.container{
-		grid-column: 1/4;
-		grid-row: 3/4;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		.sliderItemActive{
-			@include sliderItem();
-		}
-		.sliderItemDisable{
-			.descItem{
-				opacity: 0;
-			}
-			.imgContainer{
-				opacity: 0.3;
-			}
-			@include sliderItem();
-		}
-	}
-	.imgContainer{
-		img{
-			border-radius: 50%;
-		}
-	}	
 	.descContainer{
 		display: flex;
 		flex-direction: row;

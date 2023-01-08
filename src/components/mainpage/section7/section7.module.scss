@@ -1,0 +1,46 @@
+@use 'src/components/settings';
+
+.section7Container {
+	display: grid;
+	grid-template-columns: 100px 1fr 0px;
+	grid-template-rows: 50px 1fr 50px;
+	column-gap: 150px;
+	background-color: rgba(245, 245, 245, 0.8);
+
+	.wrapper {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		display: grid;
+		grid-template-columns: repeat(3, 350px);
+		column-gap: 170px;
+
+		.wrapperItem {
+			border-radius: 5%;
+			.item {
+				border-radius: 5%;
+				min-height: 500px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.textWrapper {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					min-height: 300px;
+					max-width: 230px;
+
+					.title {
+						@include settings.pop;
+						font-size: 35px;
+					}
+
+					.desc {
+						@include settings.pop;
+						font-size: 23px;
+					}
+				}
+			}
+		}
+	}
+}
